@@ -12,3 +12,4 @@ Call with "print" as a query parameter (or comment out call to `separateComponen
 
 Made by [Martin Vorel](https://libreshot.com/about-libreshot/) 
 licensed under [CC0 - Public Domain license & Royalty free](https://creativecommons.org/licenses/publicdomain/).
+He has a whole webpage full of cool photos all under public domain licenses.
