@@ -29,7 +29,7 @@
             }
             let dials = document.querySelector(".dials");
             let clonedDials = dials.cloneNode(true);
-            clonedDials.setAttribute("transform", "translate(10, 45)")
+            clonedDials.setAttribute("transform", clonedDials.getAttribute("transform") + " translate(0, 35)")
             dials.parentNode.insertBefore(clonedDials, dials);
         }
 
@@ -76,10 +76,14 @@
                 M 61,35 l 26,0 l 0,14 l -26,0 z
                 M 61,70 l 26,0 l 0,14 l -26,0 z
             "/>
-            <circle cx="42" cy="42" r="2"/>
-            <circle cx="106.5" cy="42" r="2"/>
-            <circle cx="42" cy="77" r="2"/>
-            <circle cx="106.5" cy="77" r="2"/>
+            <g  transform="translate(42, 42)">
+                <circle cx="0" cy="0" r="2"/>
+                <circle cx="0" cy="35" r="2"/>
+            </g>
+            <g  transform="translate(106.5, 42)">
+                <circle cx="0" cy="0" r="2"/>
+                <circle cx="0" cy="35" r="2"/>
+            </g>
         </g>
     </g>
 </svg>
