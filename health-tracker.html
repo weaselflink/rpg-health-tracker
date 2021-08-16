@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RPG Health Tracker</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script type="application/ecmascript">
+        function onReady() {
+            let leftText = document.querySelector(".left-dial text");
+            let leftCount = 10;
+            for (let i = 1; i < leftCount; i++) {
+                let cloned = leftText.cloneNode(true);
+                cloned.textContent = i + "";
+                cloned.setAttribute("transform", "rotate(" + (-i * (360 / leftCount)) + ")")
+                leftText.parentNode.appendChild(cloned);
+            }
+            let rightText = document.querySelector(".right-dial text");
+            let rightCount = 10;
+            for (let i = 1; i < rightCount; i++) {
+                let cloned = rightText.cloneNode(true);
+                cloned.textContent = i + "";
+                cloned.setAttribute("transform", "rotate(" + (i * (360 / rightCount)) + ")")
+                rightText.parentNode.appendChild(cloned);
+            }
+            let dials = document.querySelector(".dials");
+            let clonedDials = dials.cloneNode(true);
+            clonedDials.setAttribute("transform", "translate(10, 45)")
+            dials.parentNode.insertBefore(clonedDials, dials);
+        }
+
+        document.addEventListener('DOMContentLoaded', onReady, false);
+    </script>
+</head>
+<body>
+<svg viewBox="0 0 210 210">
+    <style>
+        circle {
+            fill: none;
+            stroke: black;
+            stroke-width: 0.1;
+        }
+
+        .cover path {
+            fill: #fffffff0;
+            stroke: black;
+            stroke-width: 0.1;
+        }
+
+        text {
+            font-family: serif;
+            font-size: 4mm;
+            text-anchor: end;
+        }
+    </style>
+    <g class="root" transform="scale(1)">
+        <g class="dials" transform="translate(10, 10)">
+            <g class="left-dial" transform="translate(42, 42) rotate(36)">
+                <circle cx="0" cy="0" r="32"/>
+                <circle cx="0" cy="0" r="2"/>
+                <text x="31" y="5"></text>
+            </g>
+            <g class="right-dial" transform="translate(106.5, 42) rotate(72)">
+                <circle cx="0" cy="0" r="32"/>
+                <circle cx="0" cy="0" r="2"/>
+                <text x="-23" y="5">0</text>
+            </g>
+        </g>
+        <g class="cover" transform="translate(10, 10)">
+            <path fill-rule="evenodd" d="
+                M 14,9 l 120.5,0 l 5,5 l 0,91 l -5,5 l -120.5,0 l-5,-5 l 0,-91 z
+                M 61,35 l 26,0 l 0,14 l -26,0 z
+                M 61,70 l 26,0 l 0,14 l -26,0 z
+            "/>
+            <circle cx="42" cy="42" r="2"/>
+            <circle cx="106.5" cy="42" r="2"/>
+            <circle cx="42" cy="77" r="2"/>
+            <circle cx="106.5" cy="77" r="2"/>
+        </g>
+    </g>
+</svg>
+</body>
+</html>
