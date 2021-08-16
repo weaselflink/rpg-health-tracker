@@ -10,19 +10,19 @@
         }
     </style>
     <script type="application/ecmascript">
+        function appendTransform(element, text) {
+            element.setAttribute("transform",
+                element.getAttribute("transform") + text
+            );
+        }
+
         function separateComponents() {
             let firstDials = document.querySelector(".dials:nth-child(1)");
-            firstDials.setAttribute("transform",
-                firstDials.getAttribute("transform") + " translate(-8, -8)"
-            );
+            appendTransform(firstDials, " translate(-8, -8)");
             let secondDials = document.querySelector(".dials:nth-child(2)");
-            secondDials.setAttribute("transform",
-                secondDials.getAttribute("transform") + " translate(24, 16)"
-            );
+            appendTransform(secondDials, " translate(24, 16)");
             let cover = document.querySelector(".cover");
-            cover.setAttribute("transform",
-                cover.getAttribute("transform") + " rotate(90) translate(118, -113)"
-            );
+            appendTransform(cover, " rotate(90) translate(118, -113)");
         }
 
         function onReady() {
@@ -45,9 +45,7 @@
             let dials = document.querySelector(".dials");
             let cover = document.querySelector(".cover");
             let clonedDials = dials.cloneNode(true);
-            clonedDials.setAttribute("transform",
-                clonedDials.getAttribute("transform") + " translate(0, 35)"
-            );
+            appendTransform(clonedDials, " translate(0, 35)");
             dials.parentNode.insertBefore(clonedDials, cover);
 
             separateComponents();
