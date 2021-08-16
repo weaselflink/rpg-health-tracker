@@ -17,10 +17,12 @@
         }
 
         function separateComponents() {
+            document.querySelectorAll(".right-dial")
+                    .forEach((dial) => { appendTransform(dial, " translate(10, 0)"); });
             let firstDials = document.querySelector(".dials:nth-child(2)");
-            appendTransform(firstDials, " translate(-8, -8)");
+            appendTransform(firstDials, " translate(-4, -8)");
             let secondDials = document.querySelector(".dials:nth-child(3)");
-            appendTransform(secondDials, " translate(24, 16)");
+            appendTransform(secondDials, " translate(32, 16)");
             let cover = document.querySelector(".cover");
             appendTransform(cover, " rotate(90) translate(118, -112)");
             let back = document.querySelector(".back");
@@ -114,12 +116,12 @@
             </g>
         </g>
         <g class="dials" transform="translate(2, 2)">
-            <g class="left-dial" transform="translate(42, 42) rotate(36)">
+            <g class="left-dial" transform="translate(42, 42)">
                 <circle cx="0" cy="0" r="32"/>
                 <circle class="inner" cx="0" cy="0" r="2"/>
                 <text x="31" y="5"></text>
             </g>
-            <g class="right-dial" transform="translate(106.5, 42) rotate(72)">
+            <g class="right-dial" transform="translate(106.5, 42)">
                 <circle cx="0" cy="0" r="32"/>
                 <circle class="inner" cx="0" cy="0" r="2"/>
                 <text x="-23" y="5">0</text>
