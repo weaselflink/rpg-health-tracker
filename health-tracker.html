@@ -57,7 +57,7 @@
     </script>
 </head>
 <body>
-<svg viewBox="0 0 210 260">
+<svg viewBox="0 0 210 270">
     <defs>
         <pattern id="wood" width="1" height="1"
                 viewBox="0 0 861 574"
@@ -75,13 +75,17 @@
         circle {
             fill: none;
             stroke: black;
-            stroke-width: 0.1;
+            stroke-width: 0.2;
+        }
+
+        circle.inner {
+            stroke-width: 0.5;
         }
 
         .back path, .cover path {
             fill-opacity: 0.3;
             stroke: black;
-            stroke-width: 0.1;
+            stroke-width: 0.2;
         }
 
         text {
@@ -101,23 +105,23 @@
                 z
             "/>
             <g  transform="translate(42, 42)">
-                <circle cx="0" cy="0" r="2"/>
-                <circle cx="0" cy="35" r="2"/>
+                <circle class="inner" cx="0" cy="0" r="2"/>
+                <circle class="inner" cx="0" cy="35" r="2"/>
             </g>
             <g  transform="translate(106.5, 42)">
-                <circle cx="0" cy="0" r="2"/>
-                <circle cx="0" cy="35" r="2"/>
+                <circle class="inner" cx="0" cy="0" r="2"/>
+                <circle class="inner" cx="0" cy="35" r="2"/>
             </g>
         </g>
         <g class="dials" transform="translate(2, 2)">
             <g class="left-dial" transform="translate(42, 42) rotate(36)">
                 <circle cx="0" cy="0" r="32"/>
-                <circle cx="0" cy="0" r="2"/>
+                <circle class="inner" cx="0" cy="0" r="2"/>
                 <text x="31" y="5"></text>
             </g>
             <g class="right-dial" transform="translate(106.5, 42) rotate(72)">
                 <circle cx="0" cy="0" r="32"/>
-                <circle cx="0" cy="0" r="2"/>
+                <circle class="inner" cx="0" cy="0" r="2"/>
                 <text x="-23" y="5">0</text>
             </g>
         </g>
@@ -133,12 +137,12 @@
                 M 61,70 l 26,0 l 0,14 l -26,0 z
             "/>
             <g  transform="translate(42, 42)">
-                <circle cx="0" cy="0" r="2"/>
-                <circle cx="0" cy="35" r="2"/>
+                <circle class="inner" cx="0" cy="0" r="2"/>
+                <circle class="inner" cx="0" cy="35" r="2"/>
             </g>
             <g  transform="translate(106.5, 42)">
-                <circle cx="0" cy="0" r="2"/>
-                <circle cx="0" cy="35" r="2"/>
+                <circle class="inner" cx="0" cy="0" r="2"/>
+                <circle class="inner" cx="0" cy="35" r="2"/>
             </g>
         </g>
     </g>
