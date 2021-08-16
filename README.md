@@ -1,4 +1,4 @@
-#RPG Health Tracker
+# RPG Health Tracker
 
 Provides two dials 0-99 (e.g. for D&D temporary hit points).
 
