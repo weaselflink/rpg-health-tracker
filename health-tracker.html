@@ -17,12 +17,14 @@
         }
 
         function separateComponents() {
-            let firstDials = document.querySelector(".dials:nth-child(1)");
+            let firstDials = document.querySelector(".dials:nth-child(2)");
             appendTransform(firstDials, " translate(-8, -8)");
-            let secondDials = document.querySelector(".dials:nth-child(2)");
+            let secondDials = document.querySelector(".dials:nth-child(3)");
             appendTransform(secondDials, " translate(24, 16)");
             let cover = document.querySelector(".cover");
-            appendTransform(cover, " rotate(90) translate(118, -113)");
+            appendTransform(cover, " rotate(90) translate(118, -112)");
+            let back = document.querySelector(".back");
+            appendTransform(back, " rotate(90) translate(17, -213)");
         }
 
         function onReady() {
@@ -63,7 +65,7 @@
             stroke-width: 0.1;
         }
 
-        .cover path {
+        .back path, .cover path {
             fill: #fffffff0;
             stroke: black;
             stroke-width: 0.1;
@@ -76,6 +78,24 @@
         }
     </style>
     <g class="root">
+        <g class="back" transform="translate(2, 103)">
+            <path fill-rule="evenodd" d="
+                M 16,9
+                l 116.5,0 l 7,7
+                l 0,11 q -6,15 0,30 l 0,5 q -6,15 0,30 l 0,11
+                l -7,7 l -116.5,0 l-7,-7
+                l 0,-11 q 6,-15 0,-30 l 0,-5 q 6,-15 0,-30 l 0,-11
+                z
+            "/>
+            <g  transform="translate(42, 42)">
+                <circle cx="0" cy="0" r="2"/>
+                <circle cx="0" cy="35" r="2"/>
+            </g>
+            <g  transform="translate(106.5, 42)">
+                <circle cx="0" cy="0" r="2"/>
+                <circle cx="0" cy="35" r="2"/>
+            </g>
+        </g>
         <g class="dials" transform="translate(2, 2)">
             <g class="left-dial" transform="translate(42, 42) rotate(36)">
                 <circle cx="0" cy="0" r="32"/>
