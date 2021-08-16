@@ -10,6 +10,21 @@
         }
     </style>
     <script type="application/ecmascript">
+        function separateComponents() {
+            let firstDials = document.querySelector(".dials:nth-child(1)");
+            firstDials.setAttribute("transform",
+                firstDials.getAttribute("transform") + " translate(-8, -8)"
+            );
+            let secondDials = document.querySelector(".dials:nth-child(2)");
+            secondDials.setAttribute("transform",
+                secondDials.getAttribute("transform") + " translate(24, 16)"
+            );
+            let cover = document.querySelector(".cover");
+            cover.setAttribute("transform",
+                cover.getAttribute("transform") + " rotate(90) translate(118, -113)"
+            );
+        }
+
         function onReady() {
             let leftText = document.querySelector(".left-dial text");
             let leftCount = 10;
@@ -28,16 +43,21 @@
                 rightText.parentNode.appendChild(cloned);
             }
             let dials = document.querySelector(".dials");
+            let cover = document.querySelector(".cover");
             let clonedDials = dials.cloneNode(true);
-            clonedDials.setAttribute("transform", clonedDials.getAttribute("transform") + " translate(0, 35)")
-            dials.parentNode.insertBefore(clonedDials, dials);
+            clonedDials.setAttribute("transform",
+                clonedDials.getAttribute("transform") + " translate(0, 35)"
+            );
+            dials.parentNode.insertBefore(clonedDials, cover);
+
+            separateComponents();
         }
 
         document.addEventListener('DOMContentLoaded', onReady, false);
     </script>
 </head>
 <body>
-<svg viewBox="0 0 210 210">
+<svg viewBox="0 0 210 260">
     <style>
         circle {
             fill: none;
@@ -57,8 +77,8 @@
             text-anchor: end;
         }
     </style>
-    <g class="root" transform="scale(1)">
-        <g class="dials" transform="translate(10, 10)">
+    <g class="root">
+        <g class="dials" transform="translate(2, 2)">
             <g class="left-dial" transform="translate(42, 42) rotate(36)">
                 <circle cx="0" cy="0" r="32"/>
                 <circle cx="0" cy="0" r="2"/>
@@ -70,7 +90,7 @@
                 <text x="-23" y="5">0</text>
             </g>
         </g>
-        <g class="cover" transform="translate(10, 10)">
+        <g class="cover" transform="translate(2, 2)">
             <path fill-rule="evenodd" d="
                 M 16,9
                 l 116.5,0 l 7,7
