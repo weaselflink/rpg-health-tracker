@@ -50,9 +50,7 @@
             appendTransform(clonedDials, " translate(0, 35)");
             dials.parentNode.insertBefore(clonedDials, cover);
 
-            if (new URLSearchParams(window.location.search).has("print")) {
-                separateComponents();
-            }
+            separateComponents();
         }
 
         document.addEventListener('DOMContentLoaded', onReady, false);

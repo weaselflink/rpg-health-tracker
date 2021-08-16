@@ -4,7 +4,7 @@ Provides two dials 0-99 (e.g. for D&D temporary hit points).
 
 ## Usage
 
-Call with "print" as a query parameter (or comment out call to `separateComponents()`) and print.
+Open in browser and print (A4, portrait).
 
 ## Thanks to
 
